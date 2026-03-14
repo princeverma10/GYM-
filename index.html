@@ -7,8 +7,6 @@
 
 <title>Best Gym in Agra | Ultimate Fitness Center</title>
 
-<meta name="description" content="Best fitness gym in Agra with expert trainers, modern equipment and affordable membership plans.">
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -29,8 +27,6 @@ color:white;
 overflow-x:hidden;
 }
 
-/* NAVBAR */
-
 nav{
 position:fixed;
 top:0;
@@ -38,14 +34,11 @@ width:100%;
 display:flex;
 justify-content:space-between;
 padding:20px 8%;
-background:rgba(0,0,0,.6);
-backdrop-filter:blur(10px);
+background:rgba(0,0,0,.7);
 z-index:1000;
 }
 
-nav h2{
-color:#ff4d00;
-}
+nav h2{color:#ff4d00;}
 
 nav ul{
 display:flex;
@@ -59,8 +52,6 @@ text-decoration:none;
 font-size:14px;
 }
 
-/* SECTIONS */
-
 section{
 min-height:100vh;
 display:flex;
@@ -71,112 +62,104 @@ padding:120px 10%;
 text-align:center;
 }
 
-/* HERO */
-
 .hero h1{
-font-size:65px;
+font-size:60px;
 background:linear-gradient(90deg,#ff4d00,#ffb300);
 -webkit-background-clip:text;
 color:transparent;
 }
 
-.hero p{
-margin-top:20px;
-max-width:600px;
-}
-
 .btn{
-margin-top:25px;
-padding:14px 40px;
+margin-top:20px;
+padding:12px 35px;
 border:none;
 background:#ff4d00;
 color:white;
 border-radius:30px;
 cursor:pointer;
-transition:.3s;
 }
-
-.btn:hover{
-transform:scale(1.1);
-}
-
-/* GRID */
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
 width:100%;
-margin-top:50px;
+margin-top:40px;
 }
-
-/* CARD */
 
 .card{
 background:#111;
-padding:30px;
+padding:25px;
 border-radius:10px;
-transition:.4s;
 }
-
-.card:hover{
-transform:translateY(-10px) scale(1.05);
-background:#191919;
-}
-
-/* TRAINER IMAGE */
-
-.card img{
-width:100%;
-border-radius:10px;
-margin-bottom:15px;
-}
-
-/* PRICING */
 
 .price{
 font-size:40px;
 color:#ff4d00;
-margin:20px 0;
+margin:10px 0;
 }
 
-/* CONTACT FORM */
+/* GALLERY */
+
+.carousel{
+width:100%;
+max-width:800px;
+overflow:hidden;
+position:relative;
+}
+
+.carousel img{
+width:100%;
+display:none;
+border-radius:10px;
+}
+
+.carousel img.active{
+display:block;
+}
+
+/* FORM */
 
 form{
 display:flex;
 flex-direction:column;
 gap:15px;
-margin-top:30px;
-width:100%;
 max-width:400px;
+width:100%;
 }
 
 form input{
-padding:12px;
-border-radius:8px;
+padding:10px;
 border:none;
+border-radius:5px;
 }
 
-/* GALLERY CAROUSEL */
+/* QR POPUP */
 
-.carousel{
-width:80%;
-max-width:700px;
-overflow:hidden;
-border-radius:10px;
-margin-top:40px;
-}
-
-.slides{
-display:flex;
-transition:0.5s;
-}
-
-.slides img{
+.qr-popup{
+position:fixed;
+top:0;
+left:0;
 width:100%;
+height:100%;
+background:rgba(0,0,0,.8);
+display:none;
+justify-content:center;
+align-items:center;
 }
 
-/* WHATSAPP */
+.qr-box{
+background:#111;
+padding:30px;
+border-radius:10px;
+text-align:center;
+}
+
+.qr-box img{
+width:250px;
+}
+
+/* WHATSAPP BUTTON */
 
 .whatsapp{
 position:fixed;
@@ -185,12 +168,10 @@ left:20px;
 background:#25D366;
 padding:14px 20px;
 border-radius:30px;
-text-decoration:none;
 color:white;
+text-decoration:none;
 font-weight:bold;
 }
-
-/* CANVAS */
 
 canvas{
 position:absolute;
@@ -199,62 +180,35 @@ left:0;
 z-index:-1;
 }
 
-/* MOBILE */
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:40px;
-}
-
-nav ul{
-display:none;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
 <nav>
-
 <h2>Ultimate Gym</h2>
 
 <ul>
 <li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
 <li><a href="#trainer">Trainers</a></li>
-<li><a href="#membership">Membership</a></li>
+<li><a href="#schedule">Schedule</a></li>
+<li><a href="#pricing">Membership</a></li>
 <li><a href="#gallery">Gallery</a></li>
-<li><a href="#reviews">Reviews</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
-
 </nav>
 
 <canvas id="bg"></canvas>
 
 <!-- HERO -->
 
-<section class="hero" id="home">
+<section id="home" class="hero">
 
 <h1>Transform Your Body</h1>
 
-<p>Join the best gym in Agra with expert trainers and modern equipment.</p>
+<p>Join the best gym in Agra with modern equipment and expert trainers.</p>
 
-<a href="#membership"><button class="btn">Join Now</button></a>
-
-</section>
-
-<!-- ABOUT -->
-
-<section id="about">
-
-<h1>About Our Gym</h1>
-
-<p>Ultimate Gym provides professional fitness training, modern workout equipment and certified trainers to help you achieve your fitness goals.</p>
+<button class="btn" onclick="openQR()">Join Now</button>
 
 </section>
 
@@ -267,21 +221,48 @@ display:none;
 <div class="grid">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1605296867424-35fc25c9212a">
+<img src="https://images.unsplash.com/photo-1605296867424-35fc25c9212a" width="100%">
 <h3>Rahul Sharma</h3>
 <p>Strength Coach</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1550345332-09e3ac987658">
-<h3>Amit Verma</h3>
+<img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b" width="100%">
+<h3>Aman Singh</h3>
 <p>Fitness Trainer</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e">
-<h3>Pooja Singh</h3>
+<img src="https://images.unsplash.com/photo-1594737625785-a6cbdabd333c" width="100%">
+<h3>Priya Verma</h3>
 <p>Yoga Trainer</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CLASS SCHEDULE -->
+
+<section id="schedule">
+
+<h1>Class Schedule</h1>
+
+<div class="grid">
+
+<div class="card">
+<h3>Morning Batch</h3>
+<p>6:00 AM – 9:00 AM</p>
+</div>
+
+<div class="card">
+<h3>Afternoon Batch</h3>
+<p>12:00 PM – 3:00 PM</p>
+</div>
+
+<div class="card">
+<h3>Evening Batch</h3>
+<p>5:00 PM – 10:00 PM</p>
 </div>
 
 </div>
@@ -290,7 +271,7 @@ display:none;
 
 <!-- MEMBERSHIP -->
 
-<section id="membership">
+<section id="pricing">
 
 <h1>Membership Plans</h1>
 
@@ -299,41 +280,40 @@ display:none;
 <div class="card">
 <h3>Monthly</h3>
 <div class="price">₹1500</div>
-<button class="btn">Join Now</button>
+<button class="btn" onclick="openQR()">Join Now</button>
 </div>
 
 <div class="card">
 <h3>Quarterly</h3>
 <div class="price">₹4000</div>
-<button class="btn">Join Now</button>
+<button class="btn" onclick="openQR()">Join Now</button>
 </div>
 
 <div class="card">
 <h3>Half Yearly</h3>
 <div class="price">₹7000</div>
-<button class="btn">Join Now</button>
+<button class="btn" onclick="openQR()">Join Now</button>
 </div>
 
 <div class="card">
 <h3>Yearly</h3>
 <div class="price">₹12000</div>
-<button class="btn">Join Now</button>
+<button class="btn" onclick="openQR()">Join Now</button>
 </div>
 
 </div>
+<section id="bmi">
+
+<h1>BMI Calculator</h1>
+
+<input type="number" id="height" placeholder="Height (cm)">
+<input type="number" id="weight" placeholder="Weight (kg)">
+
+<button class="btn" onclick="calcBMI()">Calculate BMI</button>
+
+<p id="bmiResult"></p>
 
 </section>
-
-<!-- UPI PAYMENT -->
-
-<section>
-
-<h1>Online Membership Payment</h1>
-
-<p>Scan the QR code and pay via UPI</p>
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/UPI-QR.png" width="220">
-
 </section>
 
 <!-- GALLERY -->
@@ -344,69 +324,76 @@ display:none;
 
 <div class="carousel">
 
-<div class="slides" id="slides">
-
-<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438">
-<img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b">
+<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438" class="active">
 <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1">
-
-</div>
+<img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b">
 
 </div>
 
 </section>
+<section id="transformation">
 
-<!-- REVIEWS -->
-
-<section id="reviews">
-
-<h1>Member Reviews</h1>
+<h1>Member Transformations</h1>
 
 <div class="grid">
 
 <div class="card">
-<p>⭐⭐⭐⭐⭐</p>
-<p>Best gym in Agra with great trainers.</p>
-<h4>Rahul</h4>
+<img src="https://images.unsplash.com/photo-1594737625785-a6cbdabd333c" width="100%">
+<p>Lost 12kg in 4 months</p>
 </div>
 
 <div class="card">
-<p>⭐⭐⭐⭐⭐</p>
-<p>Amazing equipment and environment.</p>
-<h4>Amit</h4>
+<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438" width="100%">
+<p>Muscle gain transformation</p>
 </div>
 
 <div class="card">
-<p>⭐⭐⭐⭐⭐</p>
-<p>Lost 12kg in 4 months!</p>
-<h4>Priya</h4>
+<img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b" width="100%">
+<p>Fat loss journey</p>
 </div>
 
 </div>
 
 </section>
 
+<section id="trial">
+
+<h1>Book Free Trial Workout</h1>
+
+<p>Try our gym for free before joining.</p>
+
+<button class="btn"
+onclick="window.open('https://wa.me/YOURNUMBER?text=I want free gym trial')">
+
+Book Free Trial
+
+</button>
+
+</section>  
 <!-- CONTACT -->
 
 <section id="contact">
 
 <h1>Contact Us</h1>
 
-<form onsubmit="sendWhatsApp(); return false;">
+<form onsubmit="sendWhatsApp();return false;">
 
 <input type="text" id="name" placeholder="Name" required>
-<input type="tel" id="phone" placeholder="Phone" required>
+<input type="tel" id="phone" placeholder="Phone">
+<input type="text" id="msg" placeholder="Message">
 
-<button class="btn">Send</button>
+<button class="btn">Send Message</button>
 
 </form>
 
-<h2 style="margin-top:40px">Our Location</h2>
+<h3 style="margin-top:40px">Gym Timing</h3>
+<p>Open: 6:00 AM</p>
+<p>Close: 10:00 PM</p>
 
-<iframe 
-src="https://www.google.com/maps?q=agra+gym&output=embed"
-width="100%" height="300" style="border:0;border-radius:10px;margin-top:20px">
-</iframe>
+<h3 style="margin-top:40px">Our Location</h3>
+
+<iframe src="https://www.google.com/maps?q=agra+gym&output=embed"
+width="100%" height="300" style="border:0;border-radius:10px"></iframe>
 
 </section>
 
@@ -416,65 +403,111 @@ width="100%" height="300" style="border:0;border-radius:10px;margin-top:20px">
 
 </footer>
 
-<a class="whatsapp" href="https://wa.me/919999999999">WhatsApp</a>
+<!-- WHATSAPP BUTTON -->
+
+<a class="whatsapp" href="https://wa.me/YOUR_WHATSAPP_NUMBER">WhatsApp</a>
+
+<!-- QR POPUP -->
+
+<div class="qr-popup" id="qr">
+
+<div class="qr-box">
+
+<h2>Scan & Pay Membership</h2>
+
+<img src="YOUR_UPI_QR_IMAGE">
+
+<br><br>
+
+<button class="btn" onclick="closeQR()">Close</button>
+
+</div>
+
+</div>
 
 <script>
 
-/* CONTACT TO WHATSAPP */
+/* QR POPUP */
+
+function openQR(){
+document.getElementById("qr").style.display="flex"
+}
+
+function closeQR(){
+document.getElementById("qr").style.display="none"
+}
+
+/* WHATSAPP FORM */
 
 function sendWhatsApp(){
 
 let name=document.getElementById("name").value
 let phone=document.getElementById("phone").value
+let msg=document.getElementById("msg").value
 
-let message=`New Gym Inquiry:%0AName: ${name}%0APhone: ${phone}`
+let url="https://wa.me/YOUR_WHATSAPP_NUMBER?text="
++"Name: "+name+"%0aPhone: "+phone+"%0aMessage: "+msg
 
-window.open(`https://wa.me/919999999999?text=${message}`)
+window.open(url)
 
 }
 
-/* GALLERY SLIDER */
+/* GALLERY CAROUSEL */
 
-let slideIndex=0
-let slides=document.getElementById("slides")
+let slides=document.querySelectorAll(".carousel img")
+let index=0
 
 setInterval(()=>{
-slideIndex++
-if(slideIndex>2)slideIndex=0
-slides.style.transform=`translateX(-${slideIndex*100}%)`
+slides[index].classList.remove("active")
+index=(index+1)%slides.length
+slides[index].classList.add("active")
 },3000)
 
 /* THREE JS BACKGROUND */
 
 const scene=new THREE.Scene()
+
 const camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000)
 
 const renderer=new THREE.WebGLRenderer({canvas:document.querySelector('#bg')})
+
 renderer.setSize(window.innerWidth,window.innerHeight)
 
 camera.position.z=30
 
 const geometry=new THREE.BoxGeometry(10,5,5)
+
 const material=new THREE.MeshBasicMaterial({color:0xff4d00,wireframe:true})
 
-const cube=new THREE.Mesh(geometry,material)
+const mesh=new THREE.Mesh(geometry,material)
 
-scene.add(cube)
+scene.add(mesh)
 
 function animate(){
 
 requestAnimationFrame(animate)
 
-cube.rotation.x+=0.01
-cube.rotation.y+=0.01
+mesh.rotation.x+=0.01
+mesh.rotation.y+=0.01
 
 renderer.render(scene,camera)
 
 }
 
 animate()
+  function calcBMI(){
+
+let h=document.getElementById("height").value/100
+let w=document.getElementById("weight").value
+
+let bmi=(w/(h*h)).toFixed(1)
+
+document.getElementById("bmiResult").innerHTML="Your BMI: "+bmi
+
+  }
+  
 
 </script>
 
 </body>
-  </html>
+</html>
